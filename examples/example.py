@@ -5,10 +5,20 @@ from time import time
 import matplotlib.pyplot as plt
 import numpy as np
 import random
+import os
+import urllib.request
 
-dataset1 = Dataset('dataset_mfcc.jl',f=1) # Get the dataset by making an object of the Dataset class
+file_name1, headers1 = urllib.request.urlretrieve('http://sabiod.univ-tln.fr/workspace/TIMIT/features/dataset_mfcc.jl')
 
-dataset2 = Dataset('dataset_chirplet.jl') # Get the dataset by making an object of the Dataset class
+dataset1 = Dataset(file_name1,f=1) # Get the dataset by making an object of the Dataset class
+
+os.remove(file_name1)
+
+file_name2, headers2 = urllib.request.urlretrieve('http://sabiod.univ-tln.fr/workspace/TIMIT/features/dataset_chirplet.jl')
+
+dataset2 = Dataset(file_name2) # Get the dataset by making an object of the Dataset class
+
+os.remove(file_name2)
 
 data1 = dataset1.data                                                            # Get the data for tSNE
 
@@ -18,15 +28,15 @@ data2 = dataset2.data                                                           
 
 labels2 = dataset2.labels                                                        # Get the labels
 
-vowels = ['aa', 'ae', 'ah', 'eh', 'ih', 'iy', 'uh', 'uw']                      # Legends
+vowels = ['aa', 'ae', 'ah', 'eh', 'ih', 'iy', 'uh', 'uw']                        # Legends
 
 color= ['#e41a1c', '#377eb8', '#4daf4a', '#984ea3', '#ff7f00', '#ffff33', '#a65628', '#f781bf']
 
 per= 30                                                                       # Set Perplexity(effective number of neighbours)
 
-l_rate= 1000.0                                                                 # Set learning rate
+l_rate= 1000.0                                                                # Set learning rate
 
-n_samp = 10000                                                                 # Number of samples
+n_samp = 100                                                                  # Number of samples
 
 indices = np.arange(len(data1))  # Create an array of indices upto the length of the data
 
