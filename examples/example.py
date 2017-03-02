@@ -1,6 +1,6 @@
-from dataset import Dataset
-from tSNE_utils import tSNE
-from plot_embedding import Plot_embedding as Pl
+from tSNE_lib.dataset import Dataset
+from tSNE_lib.tSNE_utils import tSNE
+from tSNE_lib.plot_embedding import Plot_embedding as Pl
 from time import time
 import matplotlib.pyplot as plt
 import numpy as np
