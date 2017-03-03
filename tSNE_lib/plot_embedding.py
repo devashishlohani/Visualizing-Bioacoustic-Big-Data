@@ -5,7 +5,7 @@ import numpy as np
 class Plot_embedding:
 
     # Constructor takes output to plot, labels for the data, labels for the legend to show and colors of the labels
-    def __init__(self, Y, labels, legend_labels, colors, title= None, subtitle= None):
+    def __init__(self, Y, labels, legend_labels, colors, title= None, subtitle=""):
 
         # Feature Scaling
         y_min, y_max = np.min(Y, 0), np.max(Y, 0)
@@ -21,5 +21,6 @@ class Plot_embedding:
         plt.xticks([])                                                                                         # Remove the X axis labels
         plt.yticks([])                                                                                         # Remove the Y axis labels
         ax.legend(scatterpoints=1, bbox_to_anchor=(1.02, 1), loc=2, borderaxespad=0.)                          # Display the legends
+   
         plt.title(subtitle)
-        plt.subplots_adjust(left=0.01, right=0.85, top=0.9, bottom=0.01)
+        plt.subplots_adjust(left=0.01, right=0.85, top=0.90, bottom=0.01)
