@@ -38,6 +38,6 @@ np.savetxt("tSNEcoordinates.txt", Y)
 
 title= "Visualizing Timit Data(Vowels) of %i samples in 2D with tSNE(MFCC)"% (n_samp)
 
-Pl(Y, o.train_labels, vowels, color, title)
+Pl(Y, o.train_labels, vowels, color, "Vowels", title)
 
 plt.show()

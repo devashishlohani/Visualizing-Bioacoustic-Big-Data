@@ -84,6 +84,14 @@ class Dataset:
 
         return Dataset(data,labels)
 
+    @classmethod
+    def Dataset_in_Table(cls,path,feature_columns, label_columns):
+
+        dataset = np.genfromtxt(path)
+        data = dataset[:, feature_columns]
+        labels= dataset[:,label_columns]
+
+        return Dataset(data,labels)
 
 # Return the elements as numpy array.
     @property
