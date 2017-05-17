@@ -16,7 +16,7 @@ class Plot_embedding:
         ax = fig.add_subplot(111)
 
         for i in range(0, len(legend_labels)):                                                                 # In this data,labels are from index 0 to 7
-            ind = np.where(labels == i)                                                                        # Take all the indexes where label is i.
+            ind = np.where(labels == i+1)                                                                        # Take all the indexes where label is i.
             ax.scatter(Y[ind, 0], Y[ind, 1], c=colors[i], s=30, marker='x', alpha=0.8, label=legend_labels[i]) # Plot all the elements for the particular label
         plt.xticks([])                                                                                         # Remove the X axis labels
         plt.yticks([])                                                                                         # Remove the Y axis labels
