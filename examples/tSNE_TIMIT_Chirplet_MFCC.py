@@ -8,13 +8,13 @@ import random
 import os
 import urllib.request
 
-file_name1, headers1 = urllib.request.urlretrieve('http://sabiod.univ-tln.fr/workspace/TIMIT/features/dataset_mfcc.jl')
+file_name1, headers1 = urllib.request.urlretrieve('http://workspace/TIMIT/features/dataset_mfcc.jl')
 
 dataset1 = Dataset.import_Timit_Data(file_name1,f=1)  # Get the dataset by making an object of the Dataset class
 
 os.remove(file_name1)
 
-file_name2, headers2 = urllib.request.urlretrieve('http://sabiod.univ-tln.fr/workspace/TIMIT/features/dataset_chirplet.jl')
+file_name2, headers2 = urllib.request.urlretrieve('http://workspace/TIMIT/features/dataset_chirplet.jl')
 
 dataset2 = Dataset.import_Timit_Data(file_name2)  # Get the dataset by making an object of the Dataset class
 
