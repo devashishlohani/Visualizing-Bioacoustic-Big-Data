@@ -8,7 +8,7 @@ import random
 import os
 import urllib.request
 
-#file_name, headers = urllib.request.urlretrieve('http://sabiod.univ-tln.fr/workspace/TIMIT/features/dataset_mfcc.jl') # if file is in the weblink
+#file_name, headers = urllib.request.urlretrieve('http://workspace/TIMIT/features/dataset_mfcc.jl') # if file is in the weblink
 
 file ='/home/deva/Desktop/Dolphin Data/Dolphin_data'
 
